@@ -12,7 +12,7 @@ function saveToDos() {
 function deleteToDo(event) {
   const li = event.target.parentElement;
   li.remove();
-  toDos = toDos.filter((toDo) => toDo !== parseInt(li.id));
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
   saveToDos();
 }
 
@@ -26,7 +26,7 @@ function paintToDo(newToDo) {
   button.addEventListener("click", deleteToDo);
   li.appendChild(span);
   li.appendChild(button);
-  toDos.push(newToDo);
+  // toDos.push(newToDo);
   toDoList.appendChild(li);
 }
 
