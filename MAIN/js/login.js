@@ -3,7 +3,6 @@ const input = loginForm.querySelector(".typeName");
 
 function paintWelcome(username) {
   const hiElement = document.querySelector(".hi");
-  console.log(hiElement);
   hiElement.innerText = `Hi! ${username}`;
 }
 
