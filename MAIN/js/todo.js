@@ -8,6 +8,16 @@ function saveToDos() {
   localStorage.setItem("todos", JSON.stringify(toDos));
 }
 
+function doneTodo(event) {
+  const li = event.target.parentNode;
+  const list = li.querySelector("span").classList;
+  if (list.contains("done")) {
+    list.remove("done");
+  } else {
+    list.add("done");
+  }
+}
+
 function removeTodo(event) {
   const li = event.target.parentNode;
   li.remove();
@@ -21,6 +31,10 @@ function paintToDo(todoObject) {
   const todo = document.createElement("span");
   todo.innerText = todoObject.todo;
   li.appendChild(todo);
+  const doneButton = document.createElement("button");
+  doneButton.innerText = "✅";
+  doneButton.addEventListener("click", doneTodo);
+  li.appendChild(doneButton);
   const removeButton = document.createElement("button");
   removeButton.innerText = "❌";
   removeButton.addEventListener("click", removeTodo);
