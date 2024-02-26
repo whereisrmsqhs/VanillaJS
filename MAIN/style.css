@@ -3,11 +3,56 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
   color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.weather-container,
+.count {
+  display: inline-block;
+  border: 5px solid;
+  border-radius: 25px;
+  padding: 20px;
+  transition: all 0.3s ease-out;
+}
+
+.weather-container:hover,
+.count:hover {
+  background-color: rgba(255, 166, 0, 0.854);
+  border-color: black;
+  color: black;
 }
 
 .main-content {
   text-align: center;
+}
+
+#login-form {
+  margin: 10px 0px;
+}
+
+.welcome {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.welcome,
+.logOut {
+  vertical-align: middle;
 }
 
 #clock {
@@ -15,12 +60,11 @@
   font-size: 5em;
 }
 
-form > input {
+.typeName {
   margin: 10px;
   padding: 5px 3px 5px 8px;
   border-radius: 10px;
   border: 0;
-  border-bottom: 2px solid rgb(45, 42, 42);
 
   color: black;
 }
@@ -42,6 +86,32 @@ form > button:hover,
 div > button:hover {
   color: white;
   background-color: black;
+}
+
+.todo-container {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.todo-input {
+  font-size: 16px;
+  border: none;
+  width: 33%;
+  background-color: transparent;
+  border-bottom: solid #aaaaaa 1px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  z-index: 5;
+  color: white;
+}
+
+.todo-input::placeholder {
+  color: white;
+}
+
+.todo-input:focus {
+  outline: none;
 }
 
 .hidden {
@@ -67,4 +137,26 @@ div > button:hover {
 
 .done {
   text-decoration: line-through;
+}
+
+.todo-list {
+  margin-bottom: 20px;
+}
+
+.quote-container {
+  position: fixed;
+  font-size: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+li > button {
+  background: none;
+  border: none;
+  margin-left: 5px;
 }

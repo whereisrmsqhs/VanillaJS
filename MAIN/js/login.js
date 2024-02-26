@@ -20,6 +20,7 @@ logoutButton.addEventListener("click", handleLogout);
 function handleLogin(event) {
   event.preventDefault();
   const username = input.value;
+  input.value = "";
   localStorage.setItem("username", username);
   loginForm.classList.add("hidden");
   paintWelcome(username);
