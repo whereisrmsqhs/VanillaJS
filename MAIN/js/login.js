@@ -1,10 +1,21 @@
 const loginForm = document.querySelector("#login-form");
 const input = loginForm.querySelector(".typeName");
+const logoutButton = document.querySelector(".welcome > button");
+const savedUsername = localStorage.getItem("username");
 
 function paintWelcome(username) {
+  document.querySelector(".welcome").classList.remove("hidden");
   const hiElement = document.querySelector(".hi");
   hiElement.innerText = `Hi! ${username}`;
 }
+
+function handleLogout() {
+  localStorage.removeItem("username");
+  document.querySelector(".welcome").classList.add("hidden");
+  loginForm.classList.remove("hidden");
+}
+
+logoutButton.addEventListener("click", handleLogout);
 
 function handleLogin(event) {
   event.preventDefault();
@@ -15,8 +26,6 @@ function handleLogin(event) {
 }
 
 loginForm.addEventListener("submit", handleLogin);
-
-const savedUsername = localStorage.getItem("username");
 
 if (savedUsername === null) {
   loginForm.classList.remove("hidden");
